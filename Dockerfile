@@ -1,11 +1,11 @@
-FROM eclipse-temurin:21 AS build
+FROM maven:3.9.9-eclipse-temurin-21 AS build AS build
 
 WORKDIR /app
 
 copy initial/pom.xml .
 copy initial/src ./src
 
-RUN mvn clean -f initial/pom.xml package -DskipTests
+RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:21
 
