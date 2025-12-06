@@ -2,7 +2,7 @@ FROM eclipse-temurin:21 AS build
 
 WORKDIR /app
 
-copy pom.xml .
+copy initial/pom.xml .
 copy initial/src ./src
 
 RUN mvn clean package -DskipTests
