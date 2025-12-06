@@ -5,7 +5,7 @@ WORKDIR /app
 copy initial/pom.xml .
 copy initial/src ./src
 
-RUN mvn clean package -DskipTests
+RUN mvn clean -f initial/pom.xml package -DskipTests
 
 FROM eclipse-temurin:21
 
